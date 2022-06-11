@@ -56,6 +56,11 @@ button {
     margin-right: 30px;
 }
 
+#zero {
+    width: 155px;
+    border-radius: 30px;
+}
+
 
 #divide {
     background-color: #FF9500;
