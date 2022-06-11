@@ -1,7 +1,7 @@
 const number = document.querySelector("span");
 var addition = document.getElementById("add");
 
-var previous;
+//var previous;
 var current;
 
 var nextNum = false; //set to true if an order of operation is the most recent button pressed
@@ -9,38 +9,27 @@ var nextNum = false; //set to true if an order of operation is the most recent b
 var adding = false; //set to true once the user presses the "+" button
 
 one.addEventListener("click", function (e) {
-    addition.style.backgroundColor = "#FF9500";
-    addition.style.color = "white";
+    if (adding) {
+        addition.style.backgroundColor = "#FF9500";
+        addition.style.color = "white";
+    }
     if (number.textContent == "0" || nextNum) {
         number.textContent = "1";
         nextNum = false;
-        if (adding) {
-            let sum = addTwo(parseInt(current), 1);
-            console.log("sum = " + sum);
-            number.textContent = sum;
-            console.log("fadsfadf");
-            adding = false;
-        }
     } else {
-
         let newNumber = number.textContent + "" + 1;
         number.textContent = newNumber;
 
     }
 
-    if (previous == null) {
-        current = number.textContent;
-        previous = current;
-    } else {
-        previous = current;
-        current = number.textContent;
-    }
-
-    console.log("previous: " + previous + ", current: " + current);
-
 });
 
 two.addEventListener("click", function (e) {
+    if (adding) {
+        addition.style.backgroundColor = "#FF9500";
+        addition.style.color = "white";
+    }
+
     if (number.textContent == "0" || nextNum) {
         number.textContent = "2";
         nextNum = false;
@@ -48,19 +37,14 @@ two.addEventListener("click", function (e) {
         let newNumber = number.textContent + "" + 2;
         number.textContent = newNumber;
     }
-
-    if (previous == null) {
-        current = number.textContent;
-        previous = current;
-    } else {
-        previous = current;
-        current = number.textContent;
-    }
-
-    console.log("previous: " + previous + ", current: " + current);
 });
 
 three.addEventListener("click", function (e) {
+    if (adding) {
+        addition.style.backgroundColor = "#FF9500";
+        addition.style.color = "white";
+    }
+
     if (number.textContent == "0" || nextNum) {
         number.textContent = "3";
         nextNum = false;
@@ -69,18 +53,14 @@ three.addEventListener("click", function (e) {
         number.textContent = newNumber;
     }
 
-    if (previous == null) {
-        current = number.textContent;
-        previous = current;
-    } else {
-        previous = current;
-        current = number.textContent;
-    }
-
-    console.log("previous: " + previous + ", current: " + current);
 });
 
 four.addEventListener("click", function (e) {
+    if (adding) {
+        addition.style.backgroundColor = "#FF9500";
+        addition.style.color = "white";
+    }
+
     if (number.textContent == "0" || nextNum) {
         number.textContent = "4";
         nextNum = false;
@@ -88,19 +68,14 @@ four.addEventListener("click", function (e) {
         let newNumber = number.textContent + "" + 4;
         number.textContent = newNumber;
     }
-
-    if (previous == null) {
-        current = number.textContent;
-        previous = current;
-    } else {
-        previous = current;
-        current = number.textContent;
-    }
-
-    console.log("previous: " + previous + ", current: " + current);
 });
 
 five.addEventListener("click", function (e) {
+    if (adding) {
+        addition.style.backgroundColor = "#FF9500";
+        addition.style.color = "white";
+    }
+
     if (number.textContent == "0" || nextNum) {
         number.textContent = "5";
         nextNum = false;
@@ -108,19 +83,14 @@ five.addEventListener("click", function (e) {
         let newNumber = number.textContent + "" + 5;
         number.textContent = newNumber;
     }
-
-    if (previous == null) {
-        current = number.textContent;
-        previous = current;
-    } else {
-        previous = current;
-        current = number.textContent;
-    }
-
-    console.log("previous: " + previous + ", current: " + current);
 });
 
 six.addEventListener("click", function (e) {
+    if (adding) {
+        addition.style.backgroundColor = "#FF9500";
+        addition.style.color = "white";
+    }
+
     if (number.textContent == "0" || nextNum) {
         number.textContent = "6";
         nextNum = false;
@@ -128,19 +98,14 @@ six.addEventListener("click", function (e) {
         let newNumber = number.textContent + "" + 6;
         number.textContent = newNumber;
     }
-
-    if (previous == null) {
-        current = number.textContent;
-        previous = current;
-    } else {
-        previous = current;
-        current = number.textContent;
-    }
-
-    console.log("previous: " + previous + ", current: " + current);
 });
 
 seven.addEventListener("click", function (e) {
+    if (adding) {
+        addition.style.backgroundColor = "#FF9500";
+        addition.style.color = "white";
+    }
+
     if (number.textContent == "0" || nextNum) {
         number.textContent = "7";
         nextNum = false;
@@ -148,19 +113,14 @@ seven.addEventListener("click", function (e) {
         let newNumber = number.textContent + "" + 7;
         number.textContent = newNumber;
     }
-
-    if (previous == null) {
-        current = number.textContent;
-        previous = current;
-    } else {
-        previous = current;
-        current = number.textContent;
-    }
-
-    console.log("previous: " + previous + ", current: " + current);
 });
 
 eight.addEventListener("click", function (e) {
+    if (adding) {
+        addition.style.backgroundColor = "#FF9500";
+        addition.style.color = "white";
+    }
+
     if (number.textContent == "0" || nextNum) {
         number.textContent = "8";
         nextNum = false;
@@ -168,19 +128,15 @@ eight.addEventListener("click", function (e) {
         let newNumber = number.textContent + "" + 8;
         number.textContent = newNumber;
     }
-
-    if (previous == null) {
-        current = number.textContent;
-        previous = current;
-    } else {
-        previous = current;
-        current = number.textContent;
-    }
-
-    console.log("previous: " + previous + ", current: " + current);
 });
 
 nine.addEventListener("click", function (e) {
+
+    if (adding) {
+        addition.style.backgroundColor = "#FF9500";
+        addition.style.color = "white";
+    }
+
     if (number.textContent == "0" || nextNum) {
         number.textContent = "9";
         nextNum = false;
@@ -188,16 +144,6 @@ nine.addEventListener("click", function (e) {
         let newNumber = number.textContent + "" + 9;
         number.textContent = newNumber;
     }
-
-    if (previous == null) {
-        current = number.textContent;
-        previous = current;
-    } else {
-        previous = current;
-        current = number.textContent;
-    }
-
-    console.log("previous: " + previous + ", current: " + current);
 });
 
 function clearButtonHighlight() {
@@ -219,20 +165,25 @@ function clearNumber() {
 
 clear.addEventListener("click", clearNumber);
 
-
-//Adding
-
-function addTwo(num1, num2) {
-    return num1 + num2;
-}
-
 addition.addEventListener("click", function (e) {
     nextNum = true;
     addition.style.backgroundColor = "white";
     addition.style.color = "#FF9500";
 
-    previous = current;
+    current = number.textContent;
     adding = true;
+})
+
+//equal
+const equal = document.getElementById("equals");
+
+equal.addEventListener("click", function () {
+    if (adding) {
+        let sum = parseInt(number.textContent) + parseInt(current);
+        number.textContent = sum;
+        current = sum;
+        adding = false;
+    }
 })
 
 
