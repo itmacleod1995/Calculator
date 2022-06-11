@@ -1,6 +1,9 @@
 const number = document.querySelector("span");
+var addition = document.getElementById("add");
 
 one.addEventListener("click", function (e) {
+    addition.style.backgroundColor = "#FF9500";
+    addition.style.color = "white";
     if (number.textContent == "0") {
         number.textContent = "1";
     } else {
@@ -87,3 +90,11 @@ function clearNumber() {
 }
 
 clear.addEventListener("click", clearNumber);
+
+addition.addEventListener("click", function (e) {
+    addition.style.backgroundColor = "white";
+    addition.style.color = "#FF9500";
+
+    let newNumber = number.textContent + " + ";
+    number.textContent = newNumber;
+})
