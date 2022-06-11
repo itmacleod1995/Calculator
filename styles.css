@@ -62,7 +62,8 @@ button {
 }
 
 
-#divide {
+#divide, #multiply, #minus, #add, #equals {
     background-color: #FF9500;
+    color: white;
 }
 
