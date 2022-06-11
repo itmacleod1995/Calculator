@@ -85,8 +85,19 @@ nine.addEventListener("click", function (e) {
     }
 });
 
+function clearButtonHighlight() {
+    var all = document.getElementsByTagName("button");
+    for (let i = 0; i < all.length; i++) {
+        if ((all[i].id == "add") || (all[i].id == "minus") || (all[i].id == "divide") || (all[i].id == "multiply") || (all[i].id == "equals")) {
+            all[i].style.backgroundColor = "#FF9500";
+            all[i].style.color = "white";
+        }
+    }
+}
+
 function clearNumber() {
     number.textContent = "0";
+    clearButtonHighlight();
 }
 
 clear.addEventListener("click", clearNumber);
@@ -98,3 +109,5 @@ addition.addEventListener("click", function (e) {
     let newNumber = number.textContent + " + ";
     number.textContent = newNumber;
 })
+
+
