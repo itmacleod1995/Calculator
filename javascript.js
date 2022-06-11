@@ -81,3 +81,9 @@ nine.addEventListener("click", function (e) {
         number.textContent = newNumber;
     }
 });
+
+function clearNumber() {
+    number.textContent = "0";
+}
+
+clear.addEventListener("click", clearNumber);
