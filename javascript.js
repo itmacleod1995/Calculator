@@ -14,6 +14,7 @@ var nextNum = false; //set to true if an order of operation is the most recent b
 var adding = false; //set to true once the user presses the "+" button
 var subtraction = false;
 var multiplication = false;
+var division = false;
 
 one.addEventListener("click", function (e) {
     if (adding) {
@@ -29,6 +30,11 @@ one.addEventListener("click", function (e) {
     if (multiplication) {
         multiply.style.backgroundColor = "#FF9500";
         multiply.style.color = "white";
+    }
+
+    if (division) {
+        divide.style.backgroundColor = "#FF9500";
+        divide.style.color = "white";
     }
 
     if (number.textContent == "0" || nextNum) {
@@ -58,6 +64,11 @@ two.addEventListener("click", function (e) {
         multiply.style.color = "white";
     }
 
+    if (division) {
+        divide.style.backgroundColor = "#FF9500";
+        divide.style.color = "white";
+    }
+
     if (number.textContent == "0" || nextNum) {
         number.textContent = "2";
         nextNum = false;
@@ -81,6 +92,11 @@ three.addEventListener("click", function (e) {
     if (multiplication) {
         multiply.style.backgroundColor = "#FF9500";
         multiply.style.color = "white";
+    }
+
+    if (division) {
+        divide.style.backgroundColor = "#FF9500";
+        divide.style.color = "white";
     }
 
     if (number.textContent == "0" || nextNum) {
@@ -109,6 +125,11 @@ four.addEventListener("click", function (e) {
         multiply.style.color = "white";
     }
 
+    if (division) {
+        divide.style.backgroundColor = "#FF9500";
+        divide.style.color = "white";
+    }
+
     if (number.textContent == "0" || nextNum) {
         number.textContent = "4";
         nextNum = false;
@@ -132,6 +153,11 @@ five.addEventListener("click", function (e) {
     if (multiplication) {
         multiply.style.backgroundColor = "#FF9500";
         multiply.style.color = "white";
+    }
+
+    if (division) {
+        divide.style.backgroundColor = "#FF9500";
+        divide.style.color = "white";
     }
 
     if (number.textContent == "0" || nextNum) {
@@ -159,6 +185,11 @@ six.addEventListener("click", function (e) {
         multiply.style.color = "white";
     }
 
+    if (division) {
+        divide.style.backgroundColor = "#FF9500";
+        divide.style.color = "white";
+    }
+
     if (number.textContent == "0" || nextNum) {
         number.textContent = "6";
         nextNum = false;
@@ -184,6 +215,11 @@ seven.addEventListener("click", function (e) {
         multiply.style.color = "white";
     }
 
+    if (division) {
+        divide.style.backgroundColor = "#FF9500";
+        divide.style.color = "white";
+    }
+
     if (number.textContent == "0" || nextNum) {
         number.textContent = "7";
         nextNum = false;
@@ -207,6 +243,11 @@ eight.addEventListener("click", function (e) {
     if (multiplication) {
         multiply.style.backgroundColor = "#FF9500";
         multiply.style.color = "white";
+    }
+
+    if (division) {
+        divide.style.backgroundColor = "#FF9500";
+        divide.style.color = "white";
     }
 
     if (number.textContent == "0" || nextNum) {
@@ -235,6 +276,11 @@ nine.addEventListener("click", function (e) {
         multiply.style.color = "white";
     }
 
+    if (division) {
+        divide.style.backgroundColor = "#FF9500";
+        divide.style.color = "white";
+    }
+
     if (number.textContent == "0" || nextNum) {
         number.textContent = "9";
         nextNum = false;
@@ -258,6 +304,11 @@ zero.addEventListener("click", function (e) {
     if (multiplication) {
         multiply.style.backgroundColor = "#FF9500";
         multiply.style.color = "white";
+    }
+
+    if (division) {
+        divide.style.backgroundColor = "#FF9500";
+        divide.style.color = "white";
     }
 
     if (number.textContent == "0" || nextNum) {
@@ -319,6 +370,16 @@ multiply.addEventListener("click", function () {
     multiplication = true;
 });
 
+//division
+divide.addEventListener("click", function () {
+    nextNum = true;
+    divide.style.backgroundColor = "white";
+    divide.style.color = "#FF9500";
+
+    current = number.textContent;
+    division = true;
+})
+
 //equal
 const equal = document.getElementById("equals");
 
@@ -338,6 +399,11 @@ equal.addEventListener("click", function () {
         number.textContent = product;
         current = product;
         multiplication = false;
+    } else if (division) {
+        let quotient = parseInt(current) / parseInt(number.textContent);
+        number.textContent = quotient;
+        current = quotient;
+        division = false;
     }
 })
 
