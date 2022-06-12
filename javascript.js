@@ -17,13 +17,12 @@ var decimalCount = 0; //make sure we can't add more than one decimal at a time
 function convert() {
     let newNum = parseInt(number.textContent) * -1;
     number.textContent = newNum;
-
-    console.log(number.textContent);
 }
 
 posOrNeg.addEventListener("click", convert);
 
 one.addEventListener("click", function (e) {
+    one.classList.add("clickedOn");
     if (adding) {
         addition.style.backgroundColor = "#FF9500";
         addition.style.color = "white";
@@ -415,7 +414,7 @@ equal.addEventListener("click", function () {
         current = product;
         multiplication = false;
     } else if (division) {
-        let quotient = parseFloat(current) / parseFloat(number.textContent);
+        let quotient = (parseFloat(current) / parseFloat(number.textContent)).toFixed(2);
         number.textContent = quotient;
         current = quotient;
         division = false;

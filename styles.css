@@ -65,6 +65,7 @@ button {
     width: 60px;
     font-size: 30px;
     background-color: #D4D4D2;
+    transition: all 0.07s;
 }
 
 .row1, .row2, .row3, .row4, .row5 {
@@ -89,4 +90,5 @@ button {
     background-color: #505050;
     color: white;
 }
+
 
