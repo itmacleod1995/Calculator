@@ -10,6 +10,8 @@ var adding = false; //set to true once the user presses the "+" button
 var subtraction = false;
 var multiplication = false;
 var division = false;
+var addingDecimal = false;
+var decimalCount = 0; //make sure we can't add more than one decimal at a time
 
 //converting current number to a positive or negative 
 function convert() {
@@ -348,6 +350,8 @@ clear.addEventListener("click", clearNumber);
 //addition
 addition.addEventListener("click", function (e) {
     nextNum = true;
+    addingDecimal = false;
+    decimalCount = 0;
     addition.style.backgroundColor = "white";
     addition.style.color = "#FF9500";
 
@@ -358,6 +362,8 @@ addition.addEventListener("click", function (e) {
 //subtraction
 minus.addEventListener("click", function () {
     nextNum = true;
+    addingDecimal = false;
+    decimalCount = 0;
     minus.style.backgroundColor = "white";
     minus.style.color = "#FF9500";
 
@@ -368,6 +374,8 @@ minus.addEventListener("click", function () {
 //multiplication
 multiply.addEventListener("click", function () {
     nextNum = true;
+    addingDecimal = false;
+    decimalCount = 0;
     multiply.style.backgroundColor = "white";
     multiply.style.color = "#FF9500";
 
@@ -378,6 +386,8 @@ multiply.addEventListener("click", function () {
 //division
 divide.addEventListener("click", function () {
     nextNum = true;
+    addingDecimal = false;
+    decimalCount = 0;
     divide.style.backgroundColor = "white";
     divide.style.color = "#FF9500";
 
@@ -390,25 +400,35 @@ const equal = document.getElementById("equals");
 
 equal.addEventListener("click", function () {
     if (adding) {
-        let sum = parseInt(number.textContent) + parseInt(current);
+        let sum = parseFloat(number.textContent) + parseFloat(current);
         number.textContent = sum;
         current = sum;
         adding = false;
     } else if (subtraction) {
-        let result = parseInt(current) - parseInt(number.textContent);
+        let result = parseFloat(current) - parseFloat(number.textContent);
         number.textContent = result;
         current = result;
         subtraction = false;
     } else if (multiplication) {
-        let product = parseInt(current) * parseInt(number.textContent);
+        let product = parseFloat(current) * parseFloat(number.textContent);
         number.textContent = product;
         current = product;
         multiplication = false;
     } else if (division) {
-        let quotient = parseInt(current) / parseInt(number.textContent);
+        let quotient = parseFloat(current) / parseFloat(number.textContent);
         number.textContent = quotient;
         current = quotient;
         division = false;
+    }
+})
+
+//decimal
+decimal.addEventListener("click", function () {
+    addingDecimal = true;
+    if (decimalCount < 1) {
+        let num = number.textContent + ".";
+        decimalCount++;
+        number.textContent = num;
     }
 })
 
