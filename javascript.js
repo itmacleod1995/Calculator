@@ -431,4 +431,11 @@ decimal.addEventListener("click", function () {
     }
 })
 
+function divideBy100() {
+    let currentNumAfterDivision = parseFloat(number.textContent) / 100;
+    number.textContent = currentNumAfterDivision;
+}
+
+percent.addEventListener("click", divideBy100);
+
 
