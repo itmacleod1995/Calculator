@@ -2,8 +2,8 @@ const number = document.querySelector("span");
 var addition = document.getElementById("add");
 
 //time
-var datetime = new Date();
-document.getElementById("date-time").textContent = datetime.getHours() + ":" + datetime.getMinutes();
+//var datetime = new Date();
+//document.getElementById("date-time").textContent = datetime.getHours() + ":" + datetime.getMinutes();
 
 
 //var previous;
