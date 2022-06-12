@@ -1,11 +1,6 @@
 const number = document.querySelector("span");
 var addition = document.getElementById("add");
 
-//time
-//var datetime = new Date();
-//document.getElementById("date-time").textContent = datetime.getHours() + ":" + datetime.getMinutes();
-
-
 //var previous;
 var current;
 
@@ -15,6 +10,16 @@ var adding = false; //set to true once the user presses the "+" button
 var subtraction = false;
 var multiplication = false;
 var division = false;
+
+//converting current number to a positive or negative 
+function convert() {
+    let newNum = parseInt(number.textContent) * -1;
+    number.textContent = newNum;
+
+    console.log(number.textContent);
+}
+
+posOrNeg.addEventListener("click", convert);
 
 one.addEventListener("click", function (e) {
     if (adding) {
