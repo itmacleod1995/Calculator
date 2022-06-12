@@ -15,7 +15,7 @@ var decimalCount = 0; //make sure we can't add more than one decimal at a time
 
 //converting current number to a positive or negative 
 function convert() {
-    let newNum = parseInt(number.textContent) * -1;
+    let newNum = parseFloat(number.textContent) * -1;
     number.textContent = newNum;
 }
 
