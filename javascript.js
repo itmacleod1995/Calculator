@@ -309,6 +309,16 @@ minus.addEventListener("click", function () {
     subtraction = true;
 });
 
+//multiplication
+multiply.addEventListener("click", function () {
+    nextNum = true;
+    multiply.style.backgroundColor = "white";
+    multiply.style.color = "#FF9500";
+
+    current = number.textContent;
+    multiplication = true;
+});
+
 //equal
 const equal = document.getElementById("equals");
 
@@ -323,6 +333,11 @@ equal.addEventListener("click", function () {
         number.textContent = result;
         current = result;
         subtraction = false;
+    } else if (multiplication) {
+        let product = parseInt(current) * parseInt(number.textContent);
+        number.textContent = product;
+        current = product;
+        multiplication = false;
     }
 })
 
