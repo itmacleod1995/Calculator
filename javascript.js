@@ -12,12 +12,25 @@ var current;
 var nextNum = false; //set to true if an order of operation is the most recent button pressed
 
 var adding = false; //set to true once the user presses the "+" button
+var subtraction = false;
+var multiplication = false;
 
 one.addEventListener("click", function (e) {
     if (adding) {
         addition.style.backgroundColor = "#FF9500";
         addition.style.color = "white";
     }
+
+    if (subtraction) {
+        minus.style.backgroundColor = "#FF9500";
+        minus.style.color = "white";
+    }
+
+    if (multiplication) {
+        multiply.style.backgroundColor = "#FF9500";
+        multiply.style.color = "white";
+    }
+
     if (number.textContent == "0" || nextNum) {
         number.textContent = "1";
         nextNum = false;
@@ -35,6 +48,16 @@ two.addEventListener("click", function (e) {
         addition.style.color = "white";
     }
 
+    if (subtraction) {
+        minus.style.backgroundColor = "#FF9500";
+        minus.style.color = "white";
+    }
+
+    if (multiplication) {
+        multiply.style.backgroundColor = "#FF9500";
+        multiply.style.color = "white";
+    }
+
     if (number.textContent == "0" || nextNum) {
         number.textContent = "2";
         nextNum = false;
@@ -48,6 +71,16 @@ three.addEventListener("click", function (e) {
     if (adding) {
         addition.style.backgroundColor = "#FF9500";
         addition.style.color = "white";
+    }
+
+    if (subtraction) {
+        minus.style.backgroundColor = "#FF9500";
+        minus.style.color = "white";
+    }
+
+    if (multiplication) {
+        multiply.style.backgroundColor = "#FF9500";
+        multiply.style.color = "white";
     }
 
     if (number.textContent == "0" || nextNum) {
@@ -66,6 +99,16 @@ four.addEventListener("click", function (e) {
         addition.style.color = "white";
     }
 
+    if (subtraction) {
+        minus.style.backgroundColor = "#FF9500";
+        minus.style.color = "white";
+    }
+
+    if (multiplication) {
+        multiply.style.backgroundColor = "#FF9500";
+        multiply.style.color = "white";
+    }
+
     if (number.textContent == "0" || nextNum) {
         number.textContent = "4";
         nextNum = false;
@@ -79,6 +122,16 @@ five.addEventListener("click", function (e) {
     if (adding) {
         addition.style.backgroundColor = "#FF9500";
         addition.style.color = "white";
+    }
+
+    if (subtraction) {
+        minus.style.backgroundColor = "#FF9500";
+        minus.style.color = "white";
+    }
+
+    if (multiplication) {
+        multiply.style.backgroundColor = "#FF9500";
+        multiply.style.color = "white";
     }
 
     if (number.textContent == "0" || nextNum) {
@@ -96,6 +149,16 @@ six.addEventListener("click", function (e) {
         addition.style.color = "white";
     }
 
+    if (subtraction) {
+        minus.style.backgroundColor = "#FF9500";
+        minus.style.color = "white";
+    }
+
+    if (multiplication) {
+        multiply.style.backgroundColor = "#FF9500";
+        multiply.style.color = "white";
+    }
+
     if (number.textContent == "0" || nextNum) {
         number.textContent = "6";
         nextNum = false;
@@ -111,6 +174,16 @@ seven.addEventListener("click", function (e) {
         addition.style.color = "white";
     }
 
+    if (subtraction) {
+        minus.style.backgroundColor = "#FF9500";
+        minus.style.color = "white";
+    }
+
+    if (multiplication) {
+        multiply.style.backgroundColor = "#FF9500";
+        multiply.style.color = "white";
+    }
+
     if (number.textContent == "0" || nextNum) {
         number.textContent = "7";
         nextNum = false;
@@ -124,6 +197,16 @@ eight.addEventListener("click", function (e) {
     if (adding) {
         addition.style.backgroundColor = "#FF9500";
         addition.style.color = "white";
+    }
+
+    if (subtraction) {
+        minus.style.backgroundColor = "#FF9500";
+        minus.style.color = "white";
+    }
+
+    if (multiplication) {
+        multiply.style.backgroundColor = "#FF9500";
+        multiply.style.color = "white";
     }
 
     if (number.textContent == "0" || nextNum) {
@@ -142,11 +225,46 @@ nine.addEventListener("click", function (e) {
         addition.style.color = "white";
     }
 
+    if (subtraction) {
+        minus.style.backgroundColor = "#FF9500";
+        minus.style.color = "white";
+    }
+
+    if (multiplication) {
+        multiply.style.backgroundColor = "#FF9500";
+        multiply.style.color = "white";
+    }
+
     if (number.textContent == "0" || nextNum) {
         number.textContent = "9";
         nextNum = false;
     } else {
         let newNumber = number.textContent + "" + 9;
+        number.textContent = newNumber;
+    }
+});
+
+zero.addEventListener("click", function (e) {
+    if (adding) {
+        addition.style.backgroundColor = "#FF9500";
+        addition.style.color = "white";
+    }
+
+    if (subtraction) {
+        minus.style.backgroundColor = "#FF9500";
+        minus.style.color = "white";
+    }
+
+    if (multiplication) {
+        multiply.style.backgroundColor = "#FF9500";
+        multiply.style.color = "white";
+    }
+
+    if (number.textContent == "0" || nextNum) {
+        number.textContent = "0";
+        nextNum = false;
+    } else {
+        let newNumber = number.textContent + "" + 0;
         number.textContent = newNumber;
     }
 });
@@ -165,11 +283,13 @@ function clearButtonHighlight() {
 
 function clearNumber() {
     number.textContent = "0";
+    current = 0;
     clearButtonHighlight();
 }
 
 clear.addEventListener("click", clearNumber);
 
+//addition
 addition.addEventListener("click", function (e) {
     nextNum = true;
     addition.style.backgroundColor = "white";
@@ -178,6 +298,16 @@ addition.addEventListener("click", function (e) {
     current = number.textContent;
     adding = true;
 })
+
+//subtraction
+minus.addEventListener("click", function () {
+    nextNum = true;
+    minus.style.backgroundColor = "white";
+    minus.style.color = "#FF9500";
+
+    current = number.textContent;
+    subtraction = true;
+});
 
 //equal
 const equal = document.getElementById("equals");
@@ -188,6 +318,11 @@ equal.addEventListener("click", function () {
         number.textContent = sum;
         current = sum;
         adding = false;
+    } else if (subtraction) {
+        let result = parseInt(current) - parseInt(number.textContent);
+        number.textContent = result;
+        current = result;
+        subtraction = false;
     }
 })
 
