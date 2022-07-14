@@ -68,6 +68,10 @@ button {
     transition: all 0.07s;
 }
 
+button:active {
+    background-color: #eee;
+}
+
 .row1, .row2, .row3, .row4, .row5 {
     display: flex;
     justify-content: space-between;
